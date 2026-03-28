@@ -52,7 +52,7 @@ func (s *ServeCmd) Run(ctx *Context) error {
 	if err != nil {
 		log.Fatal().Err(err).Msg("Cannot load configuration")
 	}
-	log.Debug().Msg(cfg.String())
+	log.Debug().Interface("config", cfg).Msg("Configuration")
 
 	// Profiler
 	if len(s.Profiler) > 0 && len(s.ProfilerPath) > 0 {

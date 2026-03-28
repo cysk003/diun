@@ -269,9 +269,6 @@ for <code>{{ .Entry.Manifest.Platform }}</code> platform.
 			}
 			require.NoError(t, err)
 			assert.Equal(t, tt.wantData, cfg)
-			if cfg != nil {
-				assert.NotEmpty(t, cfg.String())
-			}
 		})
 	}
 }
