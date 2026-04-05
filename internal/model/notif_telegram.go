@@ -13,6 +13,7 @@ type NotifTelegram struct {
 	ChatIDsFile         string   `yaml:"chatIDsFile,omitempty" json:"chatIDsFile,omitempty" validate:"omitempty,file"`
 	TemplateBody        string   `yaml:"templateBody,omitempty" json:"templateBody,omitempty" validate:"required"`
 	DisableNotification *bool    `yaml:"disableNotification,omitempty" json:"disableNotification,omitempty" validate:"omitempty"`
+	APIURL              string   `yaml:"apiURL,omitempty" json:"apiURL,omitempty" validate:"omitempty,url"`
 }
 
 // GetDefaults gets the default values

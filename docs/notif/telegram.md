@@ -31,6 +31,7 @@ Multiple chat IDs can be provided in order to deliver notifications to multiple 
 | `chatIDsFile`         |                                    | Use content of [secret file](../faq.md#secrets-loaded-from-files-and-trailing-newlines) as chat IDs if `chatIDs` not defined         |
 | `templateBody`[^1]    | See [below](#default-templatebody) | [Notification template](../faq.md#notification-template) for message body                                                            |
 | `disableNotification` | `false`                            | Send silent message with no sound                                                                                                    |
+| `apiURL`              | `https://api.telegram.org`         | Telegram Bot API URL, useful to set a proxy                                                                                          |
 
 !!! abstract "Environment variables"
     * `DIUN_NOTIF_TELEGRAM_TOKEN`
@@ -39,6 +40,7 @@ Multiple chat IDs can be provided in order to deliver notifications to multiple 
     * `DIUN_NOTIF_TELEGRAM_CHATIDSFILE`
     * `DIUN_NOTIF_TELEGRAM_TEMPLATEBODY`
     * `DIUN_NOTIF_TELEGRAM_DISABLENOTIFICATION`
+    * `DIUN_NOTIF_TELEGRAM_APIURL`
 
 !!! example "chat IDs secret file"
     Chat IDs secret file must be a valid JSON array like: `["123456789","987654321","567891234:25","891256734:25;12"]`
