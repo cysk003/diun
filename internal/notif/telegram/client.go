@@ -42,14 +42,6 @@ func (c *Client) Name() string {
 	return "telegram"
 }
 
-// apiURL returns the Telegram Bot API URL, falling back to the default if not configured.
-func (c *Client) apiURL() string {
-	if c.cfg.APIURL != "" {
-		return c.cfg.APIURL
-	}
-	return gotgbot.DefaultAPIURL
-}
-
 // Send creates and sends a Telegram notification with an entry
 func (c *Client) Send(entry model.NotifEntry) error {
 	token, err := utl.GetSecret(c.cfg.Token, c.cfg.TokenFile)
@@ -81,7 +73,7 @@ func (c *Client) Send(entry model.NotifEntry) error {
 			Client: http.Client{},
 			DefaultRequestOpts: &gotgbot.RequestOpts{
 				Timeout: gotgbot.DefaultTimeout,
-				APIURL:  c.apiURL(),
+				APIURL:  c.cfg.APIURL,
 			},
 		},
 	})

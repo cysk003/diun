@@ -25,22 +25,22 @@ Multiple chat IDs can be provided in order to deliver notifications to multiple 
 
 | Name                  | Default                            | Description                                                                                                                          |
 |-----------------------|------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
+| `apiURL`              | `https://api.telegram.org`         | Custom Telegram bot API base URL, for proxies or self-hosted bot API servers                                                         |
 | `token`               |                                    | Telegram bot token                                                                                                                   |
 | `tokenFile`           |                                    | Use content of [secret file](../faq.md#secrets-loaded-from-files-and-trailing-newlines) as Telegram bot token if `token` not defined |
 | `chatIDs`             |                                    | List of [chat IDs](#chatids-format) to send notifications to                                                                         |
 | `chatIDsFile`         |                                    | Use content of [secret file](../faq.md#secrets-loaded-from-files-and-trailing-newlines) as chat IDs if `chatIDs` not defined         |
 | `templateBody`[^1]    | See [below](#default-templatebody) | [Notification template](../faq.md#notification-template) for message body                                                            |
 | `disableNotification` | `false`                            | Send silent message with no sound                                                                                                    |
-| `apiURL`              | `https://api.telegram.org`         | Telegram Bot API URL, useful to set a proxy                                                                                          |
 
 !!! abstract "Environment variables"
+    * `DIUN_NOTIF_TELEGRAM_APIURL`
     * `DIUN_NOTIF_TELEGRAM_TOKEN`
     * `DIUN_NOTIF_TELEGRAM_TOKENFILE`
     * `DIUN_NOTIF_TELEGRAM_CHATIDS` (comma separated)
     * `DIUN_NOTIF_TELEGRAM_CHATIDSFILE`
     * `DIUN_NOTIF_TELEGRAM_TEMPLATEBODY`
     * `DIUN_NOTIF_TELEGRAM_DISABLENOTIFICATION`
-    * `DIUN_NOTIF_TELEGRAM_APIURL`
 
 !!! example "chat IDs secret file"
     Chat IDs secret file must be a valid JSON array like: `["123456789","987654321","567891234:25","891256734:25;12"]`
