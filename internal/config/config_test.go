@@ -5,6 +5,7 @@ import (
 	"testing"
 	"time"
 
+	"github.com/PaulSonOfLars/gotgbot/v2"
 	"github.com/crazy-max/diun/v4/internal/model"
 	"github.com/crazy-max/diun/v4/pkg/registry"
 	"github.com/crazy-max/diun/v4/pkg/utl"
@@ -193,7 +194,8 @@ for <code>{{ .Entry.Manifest.Platform }}</code> platform.
 						TemplateBody: model.NotifTeamsDefaultTemplateBody,
 					},
 					Telegram: &model.NotifTelegram{
-						Token: "abcdef123456",
+						APIURL: gotgbot.DefaultAPIURL,
+						Token:  "abcdef123456",
 						ChatIDs: []string{
 							"8547439",
 							"1234567",
@@ -347,6 +349,7 @@ func TestLoadEnv(t *testing.T) {
 			environ: []string{
 				"DIUN_NOTIF_TELEGRAM_TOKEN=abcdef123456",
 				"DIUN_NOTIF_TELEGRAM_CHATIDS=8547439,1234567",
+				"DIUN_NOTIF_TELEGRAM_APIURL=http://telegram-bot-api:8081",
 				"DIUN_PROVIDERS_SWARM=true",
 			},
 			expected: &Config{
@@ -362,6 +365,7 @@ func TestLoadEnv(t *testing.T) {
 						},
 						TemplateBody:        model.NotifTelegramDefaultTemplateBody,
 						DisableNotification: utl.NewFalse(),
+						APIURL:              "http://telegram-bot-api:8081",
 					},
 				},
 				Providers: &model.Providers{

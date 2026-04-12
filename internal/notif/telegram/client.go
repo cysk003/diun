@@ -73,7 +73,7 @@ func (c *Client) Send(entry model.NotifEntry) error {
 			Client: http.Client{},
 			DefaultRequestOpts: &gotgbot.RequestOpts{
 				Timeout: gotgbot.DefaultTimeout,
-				APIURL:  gotgbot.DefaultAPIURL,
+				APIURL:  c.cfg.APIURL,
 			},
 		},
 	})
