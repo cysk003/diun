@@ -8,8 +8,9 @@ import (
 	"github.com/crazy-max/diun/v4/internal/model"
 	"github.com/crazy-max/diun/v4/pkg/registry"
 	"github.com/crazy-max/diun/v4/pkg/utl"
-	dockerregistry "github.com/docker/docker/api/types/registry"
 	"github.com/rs/zerolog/log"
+	"go.podman.io/image/v5/pkg/docker/config"
+	"go.podman.io/image/v5/types"
 )
 
 func (di *Diun) createJob(job model.Job) {
@@ -83,14 +84,14 @@ func (di *Diun) createJob(job model.Job) {
 		}
 	}
 
-	var auth dockerregistry.AuthConfig
+	var auth types.DockerAuthConfig
 	if len(regUser) > 0 {
-		auth = dockerregistry.AuthConfig{
+		auth = types.DockerAuthConfig{
 			Username: regUser,
 			Password: regPassword,
 		}
 	} else {
-		auth, err = registry.LookupAuth(job.RegImage.Domain)
+		auth, err = config.GetCredentials(nil, job.RegImage.Domain)
 		if err != nil {
 			sublog.Warn().Err(err).Msg("Error seeking Docker credentials")
 		}
