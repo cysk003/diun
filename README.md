@@ -15,10 +15,17 @@
 
 ## About
 
-**Diun** is a CLI application written in [Go](https://golang.org/)  and delivered as a
-[single executable](https://github.com/crazy-max/diun/releases/latest) (and a
-[Docker image](https://hub.docker.com/r/crazymax/diun/)) to receive notifications when a Docker image is updated on
-a Docker registry.
+**Diun** watches container images and tells you when an update is available.
+It checks registries for new tags or digest changes, so you can track base image
+updates, application releases, and security rebuilds without manually checking
+every repository.
+
+It is built for self-hosted and automated environments where keeping images
+current matters, but silent drift is easy to miss. You can run Diun as a single
+[executable](https://github.com/crazy-max/diun/releases/latest) or as a
+[Docker image](https://hub.docker.com/r/crazymax/diun/), connect it to your
+container platforms and config files, and receive notifications through the
+services you already use.
 
 ![](.res/screenshot.png)
 

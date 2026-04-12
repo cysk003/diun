@@ -2,7 +2,7 @@
 
 ## Before submitting an issue
 
-First, [be a respectful](https://opensource.how/etiquette/).
+First, [be respectful](https://github.com/kossnocorp/opensource.how/blob/classic/README.md).
 
 Please do a search in [open issues]([[ config.repo_url ]]/issues?utf8=%E2%9C%93) to see if the issue or feature request has already been filed and read the [FAQ](faq.md) page first.
 

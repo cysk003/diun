@@ -1,6 +1,6 @@
 # Support [![](https://isitmaintained.com/badge/resolution/crazy-max/diun.svg)](https://isitmaintained.com/project/crazy-max/diun)
 
-First, [be a good guy](https://github.com/kossnocorp/etiquette/blob/master/README.md).
+First, [be respectful](https://github.com/kossnocorp/opensource.how/blob/classic/README.md).
 
 ## Reporting an issue
 
