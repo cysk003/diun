@@ -12,7 +12,7 @@ github.com/AlecAivazis/survey/v2/core
 github.com/AlecAivazis/survey/v2/terminal
 # github.com/Azure/go-ansiterm v0.0.0-20230124172434-306776ec8161
 ## explicit; go 1.16
-# github.com/BurntSushi/toml v1.5.0
+# github.com/BurntSushi/toml v1.6.0
 ## explicit; go 1.18
 github.com/BurntSushi/toml
 github.com/BurntSushi/toml/internal
@@ -85,8 +85,8 @@ github.com/crazy-max/cron/v3
 # github.com/crazy-max/gohealthchecks v0.6.0
 ## explicit; go 1.23.0
 github.com/crazy-max/gohealthchecks
-# github.com/crazy-max/gonfig v0.7.1
-## explicit; go 1.19
+# github.com/crazy-max/gonfig v0.8.0
+## explicit; go 1.22.0
 github.com/crazy-max/gonfig
 github.com/crazy-max/gonfig/env
 github.com/crazy-max/gonfig/file
