@@ -38,7 +38,7 @@ require (
 	github.com/stretchr/testify v1.11.1
 	github.com/tidwall/pretty v1.2.1
 	go.etcd.io/bbolt v1.4.3
-	go.podman.io/image/v5 v5.39.1
+	go.podman.io/image/v5 v5.39.2
 	golang.org/x/mod v0.34.0
 	golang.org/x/sys v0.43.0
 	google.golang.org/grpc v1.79.3
