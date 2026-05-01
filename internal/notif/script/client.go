@@ -2,6 +2,7 @@ package script
 
 import (
 	"bytes"
+	"context"
 	"os"
 	"os/exec"
 	"strings"
@@ -37,7 +38,7 @@ func (c *Client) Name() string {
 
 // Send creates and sends a script notification with an entry
 func (c *Client) Send(entry model.NotifEntry) error {
-	cmd := exec.Command(c.cfg.Cmd, c.cfg.Args...)
+	cmd := exec.CommandContext(context.Background(), c.cfg.Cmd, c.cfg.Args...)
 	setSysProcAttr(cmd)
 
 	// Capture output

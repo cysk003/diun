@@ -159,7 +159,7 @@ for <code>{{ .Entry.Manifest.Platform }}</code> platform.
 						TemplateTitle: model.NotifDefaultTemplateTitle,
 						TemplateBody:  model.NotifDefaultTemplateBody,
 					},
-					Pushover: &model.NotifPushover{
+					Pushover: &model.NotifPushover{ //nolint:gosec // fixture values are test data.
 						Token:         "uQiRzpo4DXghDmr9QzzfQu27cmVRsG",
 						Recipient:     "gznej3rKEVAvPUxu9vvNnqpmZpokzF",
 						Timeout:       utl.NewDuration(10 * time.Second),
@@ -232,7 +232,7 @@ for <code>{{ .Entry.Manifest.Platform }}</code> platform.
 						InsecureTLS: utl.NewFalse(),
 						Timeout:     utl.NewDuration(0),
 					},
-					model.RegOpt{
+					model.RegOpt{ //nolint:gosec // fixture paths are test data.
 						Name:         "docker.io/crazymax",
 						Selector:     model.RegOptSelectorImage,
 						UsernameFile: "./fixtures/run_secrets_username",
@@ -325,7 +325,7 @@ func TestLoadEnv(t *testing.T) {
 				Watch:    (&model.Watch{}).GetDefaults(),
 				Defaults: (&model.Defaults{}).GetDefaults(),
 				RegOpts: model.RegOpts{
-					model.RegOpt{
+					model.RegOpt{ //nolint:gosec // fixture paths are test data.
 						Name:         "docker.io",
 						Selector:     model.RegOptSelectorImage,
 						UsernameFile: "./fixtures/run_secrets_username",

@@ -1,6 +1,7 @@
 package grpc
 
 import (
+	"context"
 	"net"
 
 	"github.com/crazy-max/diun/v4/internal/db"
@@ -44,7 +45,7 @@ func New(authority string, db *db.Client, notif *notif.Client) (*Client, error) 
 func (c *Client) Start() error {
 	var err error
 
-	lis, err := net.Listen("tcp", c.authority)
+	lis, err := (&net.ListenConfig{}).Listen(context.Background(), "tcp", c.authority)
 	if err != nil {
 		return errors.Wrap(err, "cannot create gRPC listener")
 	}
