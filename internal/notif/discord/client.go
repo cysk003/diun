@@ -64,7 +64,8 @@ func (c *Client) Send(entry model.NotifEntry) error {
 
 	if len(c.cfg.Mentions) > 0 {
 		for _, mention := range c.cfg.Mentions {
-			content.WriteString(fmt.Sprintf("%s ", mention))
+			content.WriteString(mention)
+			content.WriteString(" ")
 		}
 	}
 	content.WriteString(string(body))
